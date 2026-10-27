@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: darkslateblue;
+    background-color: #2f366c;
 }
 
 hr {
@@ -23,7 +23,7 @@ hr {
 }
 
 header {
-    background-color: cornflowerblue;
+    background-color: #8d96ff;
 }
 
 nav {
@@ -57,7 +57,7 @@ main {
     border: 2px solid black;
     border-radius: 10px;
     padding: 0 2vw;
-    background-color: cornflowerblue;
+    background-color: #e585ff;
 }
 
 .main-box {
@@ -74,7 +74,7 @@ footer {
 }
 
 .footer-box {
-    background-color: cornflowerblue;
+    background-color: #8d96ff;
     padding: 2vw;
 }
 
