@@ -6,3 +6,7 @@ input.buttonB.onEvent(ButtonEvent.Click, function() {
 
 
 })
+
+function test(){
+
+}
