@@ -1,8 +1,8 @@
 let temp: number;
-let disableTempWarn:boolean = false;
+let disableTempWarn: boolean = false;
 
-input.buttonA.onEvent(ButtonEvent.Click, function() {
-    
+input.buttonA.onEvent(ButtonEvent.Click, function () {
+
 })
 
 input.buttonB.onEvent(ButtonEvent.Click, function () {
@@ -20,25 +20,26 @@ function tempWarner(t: number) {
     if (disableTempWarn === false) {
         if (t > 24) {
             // tempWarnAnimation()
-            light.showRing("red red red red red red red red red red");
+            light.setAll(light.rgb(255, 0, 0))
             console.log(`Your room is too hot for comfortable studying!`);
-            light.showRing("black");
+
             music.playMelody("B C C5 B C B G G ", 300);
-            pause(2000);
+            pause(10000);
+            light.setAll(light.rgb(0, 255, 0))
         }
 
 
     }
 }
 function disableTempWarner() {
-    if (disableTempWarn === true)
-    {
+    if (disableTempWarn === true) {
         disableTempWarn = false
-   } else {
+    } else {
         disableTempWarn = true;
-   }
+        light.setAll(light.rgb(0, 0, 255))
+    }
 }
 forever(function () {
     getTemp();
-    tempWarner();
+    tempWarner(temp);
 })
