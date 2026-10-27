@@ -9,3 +9,4 @@ Simple Break timer
     - Implement 15 minute iterations as a seccondary feature.
     - Determine what the warning will be
 
+INCLUDE GLASS PANNEL SOMEWHERE that the chip circuit can detect light levels. If light levels are too low. Issue a warning to avoid user eye strain.
