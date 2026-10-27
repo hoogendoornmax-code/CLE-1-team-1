@@ -51,3 +51,18 @@ function disableTempWarner() {
         light.setAll(light.rgb(0, 0, 255))
     }
 }
+
+//Animation & Light Functions
+
+// Makes Lights Flash Red
+function aniFlashRed() {
+    for (let i = 0; i < 3; i++) {
+
+        light.setAll(light.rgb(255, 0, 0))
+        pause(100);
+        light.setAll(light.rgb(0, 0, 0))
+        pause(100);
+    }
+    //Reset to base status light
+    light.setAll(light.rgb(255, 0, 255))
+}
