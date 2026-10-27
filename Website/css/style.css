@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    margin: 2vw;
+}
+
+a {
+    display: inline-block;
+    padding-left: 1vw;
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+a:hover {
+    transform: scale(1.2);
+    transition-duration: 200ms;
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 5vw;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 2vw;
+}
+
+
+footer {
+    margin: 2vw;
+}
+
+.logo {
+    max-width: 3vw;
+    transform: translateY(10px);
+}
