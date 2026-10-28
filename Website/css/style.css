@@ -162,8 +162,20 @@ footer {
     justify-content: center;
 }
 
+.main-form {
+    justify-content: space-evenly;
+}
+
 .intro {
     text-align: center;
+}
+
+.intro h1 {
+    margin-top: 0;
+}
+
+.intro p {
+    padding-bottom: 1rem;
 }
 
 .contactForm .fnLn,
@@ -174,11 +186,11 @@ footer {
 }
 
 .contactForm .fnLn {
-    padding-top: 10px;
+    padding: 20px 0;
 }
 
 .contactForm .mailPhone {
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 .contactForm .questionInput {
@@ -224,4 +236,24 @@ footer {
 
 details:not([open]) .panel {
     display: none;
+}
+
+.logo-2 {
+    height: 30vh;
+    margin: 2vw;
+}
+
+/* @media (orientation: portrait) {
+    .contactPage {
+        display: flex;
+        flex-direction: column;
+    }
+} */
+
+@media (max-width: 480px) {
+    .contactPage {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
