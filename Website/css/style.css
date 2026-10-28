@@ -41,7 +41,7 @@ a {
 a:hover {
     transform: scale(1.2);
     transition-duration: 200ms;
-    color: purple;
+    color: #e585ff;
 }
 
 h1 {
@@ -57,7 +57,7 @@ main {
     border: 2px solid black;
     border-radius: 10px;
     padding: 0 2vw;
-    background-color: #e585ff;
+    background-color: #8d96ff;
 }
 
 .main-box {

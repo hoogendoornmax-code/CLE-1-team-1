@@ -8,5 +8,7 @@ Simple Break timer
     - 1 hour at first
     - Implement 15 minute iterations as a seccondary feature.
     - Determine what the warning will be
+    - have max 2 hours
+    - make 15 minute + button
 
 INCLUDE GLASS PANNEL SOMEWHERE that the chip circuit can detect light levels. If light levels are too low. Issue a warning to avoid user eye strain.
