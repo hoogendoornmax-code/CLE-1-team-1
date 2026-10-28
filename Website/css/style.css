@@ -143,6 +143,11 @@ footer {
     object-fit: cover;
 }
 
+.logo-2 {
+    height: 30vh;
+    margin: 2vw;
+}
+
 /* Contact pagina */
 
 .contactPage {
@@ -219,9 +224,4 @@ footer {
 
 details:not([open]) .panel {
     display: none;
-}
-
-.logo-2 {
-    height: 30vh;
-    margin: 2vw;
 }
