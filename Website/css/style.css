@@ -238,10 +238,7 @@ details:not([open]) .panel {
     display: none;
 }
 
-.logo-2 {
-    height: 30vh;
-    margin: 2vw;
-}
+
 
 /* @media (orientation: portrait) {
     .contactPage {
