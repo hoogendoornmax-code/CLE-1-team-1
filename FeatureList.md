@@ -28,6 +28,14 @@ Respond to volume in room
     - Give a warning when room volume is above a certain level.
     - Sepperate volume warning if the user is being too loud
 
+    -- WALKING AVERAGE 
+
+    movingAverage = 0
+    speed = 0.9 // 0 - 1
+    {
+        movingAverage = movingAverage * ( 1 - speed) + sound * speed 
+    }
+
 Make responsive to light levels in room.
     - Warn when light levels are too low and not condusive to effective studying.
         - Flash lights to let them know "It's too dark"

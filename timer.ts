@@ -1,3 +1,4 @@
+
 let timerRunning: boolean = false
 let timerStarted: boolean = false
 let remainingSeconds: number = 900
@@ -12,29 +13,34 @@ function showTimer() {
 
 function addTimer() {
     remainingSeconds += 900
+
+    if (remainingSeconds > 7200) {
+        remainingSeconds = 7200
+    }
+
     console.log("15 minuten toegevoegd!")
     showTimer()
 }
 
-function startTimerLoop(x: boolean) {
-    if (x = true) {
-        forever(function () {
-            if (timerRunning && remainingSeconds > 0) {
-                pause(1000)
-                remainingSeconds -= 1
-                showTimer()
+function startTimerLoop() {
+    if (timerRunning && remainingSeconds > 0) {
+        pause(1000)
+        remainingSeconds -= 1
+        showTimer()
 
-                if (remainingSeconds === 0) {
-                    timerRunning = false
-                    console.log("Tijd is voorbij!")
-                    music.baDing.play()
-                }
-
-            }
-
-        })
+        if (remainingSeconds === 0) {
+            timerRunning = false
+            console.log("Tijd is voorbij!")
+            music.baDing.play()
+        }
+    } else {
+        pause(100)
     }
 }
+
+loops.forever(function () {
+    startTimerLoop()
+})
 
 input.buttonA.onEvent(ButtonEvent.Click, function () {
     if (timerStarted === false) {
@@ -43,24 +49,15 @@ input.buttonA.onEvent(ButtonEvent.Click, function () {
 
         console.log("Timer gestart!")
         showTimer()
-
-        startTimerLoop(true)
     } else {
         addTimer()
         timerRunning = true
-        if (remainingSeconds > 7200) {
-            remainingSeconds = 7199
-        }
     }
 })
 
-
 input.buttonA.onEvent(ButtonEvent.LongClick, function () {
-
-    startTimerLoop(false)
     timerRunning = false
     timerStarted = false
 
-
-    console.log("timer: off")
+    console.log("Timer: off")
 })
