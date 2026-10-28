@@ -23,11 +23,17 @@ hr {
 }
 
 header {
-    background-color: #8d96ff;
+    background-color: #e585ff;
+    position: sticky;
+    top: 0;
 }
 
-nav {
-    margin: 2vw;
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 0;
 }
 
 a {
@@ -41,14 +47,18 @@ a {
 a:hover {
     transform: scale(1.2);
     transition-duration: 200ms;
-    color: purple;
+    color: #52284E;
+}
+
+.active {
+    text-decoration: underline;
 }
 
 h1 {
     margin: 2vw;
 }
 
-main {
+.main-box {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -56,16 +66,17 @@ main {
     margin: 5vw;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 0 2vw;
-    background-color: #e585ff;
+    padding: 4vw;
+    background-color: #8d96ff;
 }
 
-.main-box {
+.home-box {
     display: flex;
 }
 
 .home-img {
-    max-height: 30vh;
+    width: min(100%, 250px);
+    height: auto;
 }
 
 footer {
@@ -74,11 +85,90 @@ footer {
 }
 
 .footer-box {
-    background-color: #8d96ff;
+    background-color: #e585ff;
     padding: 2vw;
 }
 
 .logo {
-    max-width: 3vw;
-    transform: translateY(10px);
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/* Contact pagina */
+
+.contactPage {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.contactBlock {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro {
+    text-align: center;
+}
+
+.contactForm .fnLn,
+.contactForm .mailPhone {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.contactForm .fnLn {
+    padding-top: 10px;
+}
+
+.contactForm .mailPhone {
+    padding-bottom: 10px;
+}
+
+.contactForm .questionInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.contactForm .inputBox {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contactForm .inputBox input {
+    width: 100%;
+}
+
+.questionInput button {
+    padding: 10px, 0;
+}
+
+/* question bars */
+
+.accordion {
+    background-color: #52284E;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.panel {
+    padding: 1rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+details:not([open]) .panel {
+    display: none;
 }
