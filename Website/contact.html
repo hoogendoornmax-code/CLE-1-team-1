@@ -14,13 +14,58 @@
 <body>
     <header>
         <nav>
-            <div>
+            <div class="navbar">
+                <img class="logo"
+                    src="https://i.etsystatic.com/41769818/r/il/eb8615/5492481111/il_570xN.5492481111_mygn.jpg">
                 <a href="home.html">HOME</a>
                 <a href="handleiding.html">HANDLEIDING</a>
-                <a href="contact.html">CONTACT</a>
+                <a class="active" href="contact.html">CONTACT</a>
             </div>
         </nav>
     </header>
+    <main class="contactPage">
+        <section class="main-box contactBlock">
+            <img src="#" alt="Mooie foto">
+        </section>
+        <section class="main-box contactBlock">
+            <section class="intro">
+                <h1>Heeft u een vraag?</h1>
+                <p>Stel hem via het onderstaande contactformulier. <br> En we komen zsm bij u terug!</p>
+            </section>
+            <section>
+                <form class="contactForm" action="">
+                    <div class="fnLn">
+                        <div class="inputBox">
+                            <label for="first-name">Voornaam</label>
+                            <input type="text" name="first-name" id="first-name">
+                        </div>
+                        <div class="inputBox">
+                            <label for="last-name">Achternaam</label>
+                            <input type="text" name="last-name" id="last-name">
+                        </div>
+                    </div>
+                    <div class="mailPhone">
+                        <div class="inputBox">
+                            <label for="e-mail">E-mail</label>
+                            <input type="text" name="e-mail" id="e-mail">
+                        </div>
+                        <div class="inputBox">
+                            <label for="phone-number">Telefoonnummer</label>
+                            <input type="number" name="phone-number" id="phone-number">
+                        </div>
+                    </div>
+                    <div class="questionInput">
+                        <label for="question">Uw vraag</label>
+                        <textarea name="question" id="question" rows="4"></textarea>
+                        <button type="submit">Verzenden</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+        <footer>
+
+        </footer>
+    </main>
 </body>
 
 </html>
