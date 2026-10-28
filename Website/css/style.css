@@ -82,3 +82,45 @@ footer {
     max-width: 3vw;
     transform: translateY(10px);
 }
+
+/* Contact pagina */
+
+.intro {
+    text-align: center;
+}
+
+.contactForm .fnLn,
+.contactForm .mailPhone {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.contactForm .fnLn {
+    padding-top: 10px;
+}
+
+.contactForm .mailPhone {
+    padding-bottom: 10px;
+}
+
+.contactForm .questionInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.contactForm .inputBox {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contactForm .inputBox input {
+    width: 100%;
+}
+
+.questionInput button {
+    padding: 10px, 0;
+}
