@@ -148,3 +148,27 @@ footer {
 .questionInput button {
     padding: 10px, 0;
 }
+
+/* question bars */
+
+.accordion {
+    background-color: #52284E;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.panel {
+    padding: 1rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+details:not([open]) .panel {
+    display: none;
+}
