@@ -29,7 +29,11 @@ header {
 }
 
 .navbar {
-    margin: 2vw;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 0;
 }
 
 a {
@@ -44,6 +48,10 @@ a:hover {
     transform: scale(1.2);
     transition-duration: 200ms;
     color: #52284E;
+}
+
+.active {
+    text-decoration: underline;
 }
 
 h1 {
@@ -67,7 +75,8 @@ h1 {
 }
 
 .home-img {
-    max-height: 30vh;
+    width: min(100%, 250px);
+    height: auto;
 }
 
 footer {
@@ -81,6 +90,7 @@ footer {
 }
 
 .logo {
-    max-width: 3vw;
-    transform: translateY(10px);
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
 }
