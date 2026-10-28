@@ -97,6 +97,18 @@ footer {
 
 /* Contact pagina */
 
+.contactPage {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.contactBlock {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
 .intro {
     text-align: center;
 }
