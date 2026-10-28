@@ -157,6 +157,11 @@ footer {
     justify-content: center;
 }
 
+.contactBlock img {
+    width: 16rem;
+    height: 16rem;
+}
+
 .main-form {
     justify-content: space-evenly;
 }
@@ -209,6 +214,11 @@ footer {
     padding: 10px, 0;
 }
 
+#logoMobile {
+    display: none;
+}
+
+
 /* question bars */
 
 .accordion {
@@ -238,17 +248,33 @@ details:not([open]) .panel {
     margin: 2vw;
 }
 
-/* @media (orientation: portrait) {
-    .contactPage {
-        display: flex;
-        flex-direction: column;
-    }
-} */
-
 @media (max-width: 480px) {
     .contactPage {
         display: flex;
         flex-direction: column;
         gap: 1rem;
     }
+
+    #logoMobile {
+        display: block;
+        width: 8rem;
+        height: 8rem;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    #formPic {
+        display: none;
+    }
+
+    .contactForm .fnLn,
+    .contactForm .mailPhone {
+        flex-direction: column;
+    }
+
+    .contactForm {
+        padding-bottom: 2rem;
+    }
+
 }
