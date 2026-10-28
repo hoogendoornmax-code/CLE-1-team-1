@@ -143,6 +143,84 @@ footer {
     object-fit: cover;
 }
 
+/* Contact pagina */
+
+.contactPage {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.contactBlock {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro {
+    text-align: center;
+}
+
+.contactForm .fnLn,
+.contactForm .mailPhone {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.contactForm .fnLn {
+    padding-top: 10px;
+}
+
+.contactForm .mailPhone {
+    padding-bottom: 10px;
+}
+
+.contactForm .questionInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.contactForm .inputBox {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contactForm .inputBox input {
+    width: 100%;
+}
+
+.questionInput button {
+    padding: 10px, 0;
+}
+
+/* question bars */
+
+.accordion {
+    background-color: #52284E;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.panel {
+    padding: 1rem;
+    background-color: white;
+    overflow: hidden;
+}
+
+details:not([open]) .panel {
+    display: none;
+}
+
 .logo-2 {
     height: 30vh;
     margin: 2vw;
