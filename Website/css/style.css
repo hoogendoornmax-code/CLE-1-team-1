@@ -280,3 +280,46 @@ details:not([open]) .panel {
     }
 
 }
+
+@media (max-width:1032px) and (min-width:768px) {
+    .contactPage {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #logoMobile {
+        display: block;
+        width: 8rem;
+        height: 8rem;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    #formPic {
+        display: none;
+    }
+
+    .contactForm .fnLn,
+    .contactForm .mailPhone {
+        flex-direction: column;
+    }
+
+    .contactForm .inputBox input,
+    .contactForm textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contactForm {
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+
+    .contactBlock,
+    .contactForm,
+    .contactForm .inputBox {
+        min-width: 0;
+    }
+}
