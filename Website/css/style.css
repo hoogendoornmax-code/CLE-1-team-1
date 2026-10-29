@@ -219,6 +219,10 @@ footer {
     padding: 10px, 0;
 }
 
+.questionInput button:hover {
+    background-color: #e585ff;
+}
+
 #logoMobile {
     display: none;
 }
@@ -248,6 +252,13 @@ details:not([open]) .panel {
     display: none;
 }
 
+summary:hover {
+    background-color: #8d96ff;
+}
+
+details[open] > summary {
+    background-color: #8d96ff;
+}
 
 
 @media (max-width: 480px) {
