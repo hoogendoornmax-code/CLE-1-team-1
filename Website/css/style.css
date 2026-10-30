@@ -230,6 +230,15 @@ footer {
 
 /* question bars */
 
+.freqQuest h2 {
+    text-align: center;
+    justify-content: center;
+    background-color: #52284E;
+    padding: 2rem;
+    border-top: 0.1rem solid black;
+    color: white;
+}
+
 .accordion {
     background-color: #52284E;
     color: white;
@@ -256,12 +265,12 @@ summary:hover {
     background-color: #8d96ff;
 }
 
-details[open] > summary {
+details[open]>summary {
     background-color: #8d96ff;
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (min-width: 0px) {
     .contactPage {
         display: flex;
         flex-direction: column;
