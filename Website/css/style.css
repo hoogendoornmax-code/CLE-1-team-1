@@ -343,3 +343,25 @@ details[open]>summary {
         min-width: 0;
     }
 }
+
+/* Handleiding */
+
+.introduction {
+    background: linear-gradient(45deg, #52284E, #e585ff, #52284E);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.introduction h1,
+.introduction p {
+    color: white;
+    text-align: center;
+}
+
+.introduction h1 {
+    padding-top: 2rem;
+}
+
+.introduction p {
+    padding-bottom: 4rem;
+}
