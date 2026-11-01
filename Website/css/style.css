@@ -347,9 +347,13 @@ details[open]>summary {
 /* Handleiding */
 
 .introduction {
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(45deg, #52284E, #e585ff, #52284E);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    justify-content: center;
+    padding: 0, 2rem;
 }
 
 .introduction h1,
