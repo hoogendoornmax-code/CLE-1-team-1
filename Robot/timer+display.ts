@@ -101,8 +101,6 @@ input.buttonA.onEvent(ButtonEvent.Click, function () {
         timerRunning = true
     }
 
-    
-
     light.setAll(light.rgb(100, 200, 0))
 
     strip.setAll(light.rgb(0, 255, 100))
