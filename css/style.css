@@ -357,7 +357,8 @@ details[open]>summary {
     flex-direction: column;
     flex: 1;
     justify-content: center;
-    padding: 2rem;
+    padding: 4rem;
+    min-height: 60vh;
 }
 
 .introduction h1,
@@ -378,6 +379,22 @@ details[open]>summary {
 
 #handleiding-1 {
     color: #8d96ff;
+}
+
+.handleiding-text {
+    display: flex;
+    align-items: center;
+    width: 30vw;
+    min-height: 12vw;
+    padding: 2vw;
+    background-color: #8d96ff;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition-duration: 200ms;
+}
+
+.handleiding-text:hover {
+    transform: scale(1.2);
 }
 
 /*responsive*/
