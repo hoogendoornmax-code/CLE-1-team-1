@@ -19,6 +19,7 @@ input.buttonA.onEvent(ButtonEvent.LongClick, function () {
 input.buttonA.onEvent(ButtonEvent.Click, function () {
     // is de timer
     if (timerStarted === false) {
+        remainingSeconds = 900
         timerStarted = true
         timerRunning = true
 
