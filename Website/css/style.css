@@ -26,6 +26,7 @@ header {
     background-image: linear-gradient(to right, #e585ff, #52284e);
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 .navbar {
@@ -350,6 +351,9 @@ details[open]>summary {
     background: linear-gradient(45deg, #52284E, #e585ff, #52284E);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .introduction h1,
@@ -364,4 +368,15 @@ details[open]>summary {
 
 .introduction p {
     padding-bottom: 4rem;
+}
+
+.handleiding-text {
+    display: flex;
+    align-items: center;
+    width: 20vw;
+    min-height: 12vw;
+    padding: 2vw;
+    background-color: #8d96ff;
+    border: 2px solid black;
+    border-radius: 10px;
 }
