@@ -493,3 +493,43 @@ details[open]>summary {
         padding: 1.25rem;
     }
 }
+
+/*About us*/
+
+.aboutus-foto {
+    width: 120px;
+    height: 120px;
+}
+
+.aboutus-section .handleiding-text {
+    flex-direction: row;
+    width: 30vw;
+    gap: 1rem;
+    text-align: center;
+}
+
+
+
+@media (max-width: 767px) {
+    .aboutus-section {
+        padding: 3rem;
+    }
+
+    .aboutus-section .home-box {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .aboutus-section .handleiding-text {
+        width: 100%;
+        min-height: 0;
+        padding: 1rem;
+    }
+
+    .aboutus-foto {
+        width: min(45vw, 120px);
+        height: auto;
+    }
+}
