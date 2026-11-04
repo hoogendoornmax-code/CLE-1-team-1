@@ -55,7 +55,7 @@ namespace animations {
 
 namespace temperature {
     // SETTINGS
-    let maxAcceptableTemp: number = 26
+    let maxAcceptableTemp: number = 27
     // VARIABLES
     let disableTempWarn: boolean = false;
     // FUNCTIONS
@@ -73,6 +73,7 @@ namespace temperature {
                 console.log(`Your room is too hot for comfortable studying!`);
 
                 music.playMelody("B C C5 B C B G G ", 300);
+               
                 light.setAll(light.rgb(0, 255, 0))
             }
 
@@ -253,4 +254,31 @@ namespace timer {
         }
     }
 
+    export function buttonClick() {
+        // is de timer
+        if (timer.timerStarted === false) {
+            timer.remainingSeconds = 900
+            timer.timerStarted = true
+            timer.timerRunning = true
+
+            console.log("Timer gestart!")
+            timer.showTimer()
+        } else {
+            timer.addTimer()
+            timer.timerRunning = true
+        }
+
+        light.setAll(light.rgb(100, 200, 0))
+
+        strip.setAll(light.rgb(0, 255, 100))
+
+    }
+
+    export function buttonLongClick(){
+        timer.timerRunning = false
+        timer.timerStarted = false
+        timer.remainingSeconds = 0
+        console.log("Timer: off")
+
+    }
 }

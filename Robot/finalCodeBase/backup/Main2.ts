@@ -1,56 +1,37 @@
+
 input.onSwitchMoved(SwitchDirection.Left, function () {
-    animations.drawFace(light.rgb(255, 255, 0));
+    animations.drawFace(light.rgb(255, 255, 0))
 })
+
 input.onSwitchMoved(SwitchDirection.Right, function () {
-    animations.drawHeart(light.rgb(255, 0, 0));
+    animations.drawHeart(light.rgb(255, 0, 0))
 })
+
 input.buttonB.onEvent(ButtonEvent.Click, function () {
-    temperature.disableTempWarner();
+    temperature.disableTempWarner()
     animations.drawAltFace(light.rgb(200, 100, 10))
 })
+
+// Knop A kort indrukken: starten of 15 minuten toevoegen.
 input.buttonA.onEvent(ButtonEvent.Click, function () {
-    animations.drawHeart(light.rgb(255, 0, 0));
+    timer.buttonClick()
 })
+
+// Knop A lang indrukken: stoppen en resetten.
 input.buttonA.onEvent(ButtonEvent.LongClick, function () {
-    animations.drawHeart(light.rgb(255, 0, 0));
-})
-//timerbuttons
-input.buttonA.onEvent(ButtonEvent.Click, function () {
-    // is de timer
-    if (timer.timerStarted === false) {
-        timer.remainingSeconds = 900
-        timer.timerStarted = true
-        timer.timerRunning = true
-
-        console.log("Timer gestart!")
-        timer.showTimer()
-    } else {
-        timer.addTimer()
-        timer.timerRunning = true
-    }
-
-    light.setAll(light.rgb(100, 200, 0))
-
-    strip.setAll(light.rgb(0, 255, 100))
-
+    timer.buttonLongClick()
 })
 
-// zet de timer handmatig gelijk uit
-input.buttonA.onEvent(ButtonEvent.LongClick, function () {
-    timer.timerRunning = false
-    timer.timerStarted = false
-    timer.remainingSeconds = 0
-    console.log("Timer: off")
-})
+let temp: number
 
-let strip = light.createStrip(pins.A1, 64)
-animations.drawFace(light.rgb(255, 255, 0));
-let temp: number;
+animations.drawFace(light.rgb(255, 255, 0))
 
 forever(function () {
     sound.soundSystem();
     temperature.getTemp();
     temperature.tempWarner(temp);
+
+
+
     timer.startTimerLoop()
 })
-
