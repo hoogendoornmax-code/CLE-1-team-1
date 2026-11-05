@@ -1,7 +1,9 @@
-* Use this file to define custom functions and blocks.
+
+
+/**
+ * Use this file to define custom functions and blocks.
  * Read more at https://makecode.adafruit.com/blocks/custom
  */
-
 
 namespace animations {
     let strip = light.createStrip(pins.A1, 64)
@@ -10,6 +12,15 @@ namespace animations {
     const altSmileyFace = [9, 14, 17, 18, 21, 22, 26, 29, 41, 46, 50, 51, 52, 53];
     const sadFace = [26, 29, 42, 43, 44, 45, 49, 54];
     const sunShape = [0, 4, 7, 9, 11, 14, 18, 19, 20, 21, 24, 26, 27, 28, 29, 30, 33, 34, 35, 36, 37, 39, 42, 43, 44, 45, 49, 52, 54, 56, 59, 63];
+    const speakerShape = [6, 12, 15, 17, 21, 23, 24, 25, 27, 29, 31, 32, 33, 35, 37, 39, 41, 45, 47, 52, 55, 62];
+
+    export function drawSpeaker(color: number) {
+        strip.clear();
+
+        for (let i = 0; i < speakerShape.length; i++) {
+            strip.setPixelColor(speakerShape[i], color);
+        }
+    }
 
     export function drawFace(color: number): void {
         strip.clear(); // Turn off all LEDs first
@@ -55,7 +66,7 @@ namespace animations {
 
 namespace temperature {
     // SETTINGS
-    let maxAcceptableTemp: number = 27
+    let maxAcceptableTemp: number = 26
     // VARIABLES
     let disableTempWarn: boolean = false;
     // FUNCTIONS
@@ -73,7 +84,6 @@ namespace temperature {
                 console.log(`Your room is too hot for comfortable studying!`);
 
                 music.playMelody("B C C5 B C B G G ", 300);
-               
                 light.setAll(light.rgb(0, 255, 0))
             }
 
@@ -112,7 +122,7 @@ namespace sound {
     //FUNCTIONS
     export function soundSystem() {
 
-        getSoundLevel();
+        sound = getSoundLevel();
         const now = control.millis();
 
         // Start from the first real reading rather than from an artificial zero.
@@ -152,6 +162,7 @@ namespace sound {
 
         if (warningActive) {
             light.setAll(now % 500 < 250 ? light.rgb(255, 0, 0) : light.rgb(0, 0, 0))
+            animations.drawSpeaker(light.rgb(255, 10, 10))
         } else {
             light.setAll(light.rgb(255, 0, 255))
         }
@@ -178,6 +189,7 @@ namespace timer {
     export let timerStarted: boolean = false
     export let remainingSeconds: number = 900
     export let ledStrips: number = 0
+    export let secondTimer: number = 0;
 
     light.setAll(light.rgb(100, 20, 40))
 
@@ -188,7 +200,7 @@ namespace timer {
         let remainingMinutes = Math.floor(remainingSeconds / 60) % 60
         let seconds = remainingSeconds % 60
 
-        console.log(`${remainingHours} h ${remainingMinutes} m ${seconds} s`)
+        console.log(`Time remaining: ${remainingHours} h ${remainingMinutes} m ${seconds} s`)
     }
 
     //doet de timer + een kwartier
@@ -202,10 +214,15 @@ namespace timer {
         console.log("15 minuten toegevoegd!")
         showTimer()
     }
+
+
     // start de timer en eindigt hem als de tijd om is
     export function startTimerLoop() {
-        if (timerRunning && remainingSeconds > 0) {
-            pause(1000)
+        const now = control.millis();
+
+        if (timerRunning && remainingSeconds > 0 && now > secondTimer) {
+            secondTimer = now + 1000;
+
             remainingSeconds -= 1
             showTimer()
             lightLedStrip()
@@ -215,9 +232,11 @@ namespace timer {
                 console.log("Tijd is voorbij!")
                 music.magicWand.play()
             }
-        } else {
-            pause(100)
         }
+
+        // else {
+        //     pause(100)
+        // }
     }
 
 
@@ -254,31 +273,4 @@ namespace timer {
         }
     }
 
-    export function buttonClick() {
-        // is de timer
-        if (timer.timerStarted === false) {
-            timer.remainingSeconds = 900
-            timer.timerStarted = true
-            timer.timerRunning = true
-
-            console.log("Timer gestart!")
-            timer.showTimer()
-        } else {
-            timer.addTimer()
-            timer.timerRunning = true
-        }
-
-        light.setAll(light.rgb(100, 200, 0))
-
-        strip.setAll(light.rgb(0, 255, 100))
-
-    }
-
-    export function buttonLongClick(){
-        timer.timerRunning = false
-        timer.timerStarted = false
-        timer.remainingSeconds = 0
-        console.log("Timer: off")
-
-    }
 }
